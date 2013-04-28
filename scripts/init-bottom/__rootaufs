@@ -79,6 +79,7 @@ disable_once_marker="${rootmnt}/etc/sapikachu/disable-aufs-once"
 
 if [ -f "${disable_marker}" ]; then
     echo "rootaufs: Found ${disable_marker}, disabled aufs."
+    cp /etc/fstab.bak /etc/fstab || true
     exit 0
 fi
 
